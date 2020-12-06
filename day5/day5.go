@@ -55,12 +55,9 @@ func partTwo(input []string) {
 		seatIDs = append(seatIDs, id)
 	}
 	sort.Ints(seatIDs)
-	for i := 0; i < (len(seatIDs) - 2); i++ {
-		low := seatIDs[i]
-		mid := seatIDs[i+1]
-		high := seatIDs[i+2]
-		if !(low+1 == mid && mid+1 == high) {
-			fmt.Printf("Part 2 Answer: %d", mid+1)
+	for i := 0; i < (len(seatIDs) - 1); i++ {
+		if seatIDs[i]+1 != seatIDs[i+1] {
+			fmt.Printf("Part 2 Answer: %d", seatIDs[i]+1)
 			fmt.Println()
 			break
 		}
